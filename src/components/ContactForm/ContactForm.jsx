@@ -5,6 +5,7 @@ import * as Yup from "yup";
 import css from "../ContactForm/ContactForm.module.css";
 import { useDispatch } from "react-redux";
 import { addContacts } from "../../redux/contactsSlice";
+import { addContact } from "../../redux/contactsOps";
 
 const ContactForm = () => {
   const nameId = useId();
@@ -29,7 +30,7 @@ const ContactForm = () => {
       name: values.name,
       number: values.number,
     };
-    dispatch(addContacts(newContact));
+    dispatch(addContact(newContact));
   }
 
   return (
